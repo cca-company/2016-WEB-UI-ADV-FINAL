@@ -1,0 +1,22 @@
+{
+  "name": "final-test",
+  "description": "",
+  "main": "index.js",
+  "license": "ISC",
+  "homepage": "https://github.com/cca-company/2016-WEB-UI-ADV-FINAL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "^2.2.0",
+    "jquery": "^2.2.3",
+    "handlebars": "^4.0.5",
+    "director": "^1.2.8",
+    "todomvc-common": "^1.0.2",
+    "todomvc-app-css": "^2.0.6"
+  }
+}
