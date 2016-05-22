@@ -1,0 +1,57 @@
+/*
+
+app-template.css overrides
+
+remove this comment if used
+remove this file if not
+
+*/
+
+
+li.view + li.not-found {
+	display: none;
+}
+
+.todo-list li label.not-found {
+    margin-left: 5px;  
+    color: #4d4d4d;
+}
+
+.todo-list.completed li:not(.completed){
+	display:none;
+}
+
+.todo-list.active li.completed{
+	display:none;
+}
+
+.pagebar{
+	margin-top:50px;
+}
+
+	.pagebar a{
+		display:inline-block;
+		text-align:center;
+
+		padding:5px 0;
+		margin:5px;
+		width:30px;
+
+		text-decoration: none;
+		color:#555;
+		border:1px solid #ccc;
+		border-radius: 4px;
+		background:#fff;
+	}
+
+	.pagebar a.selected{
+		color:#ff8888;
+	}
+
+	.pagebar a.disabled{
+		color:#ccc;
+	}
+
+	.pagebar a:active{
+		background:#eee;
+	}

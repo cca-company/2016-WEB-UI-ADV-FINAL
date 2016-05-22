@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Template • TodoMVC</title>
+		<link rel="stylesheet" href="css/app.css">
+		<link rel="stylesheet" href="bower_components/todomvc-common/base.css">
+		<link rel="stylesheet" href="bower_components/todomvc-app-css/index.css">
+	</head>
+	<body>		
+		<section class="todoapp">
+			<header class="header">
+				<h1>todos</h1>
+				<input class="new-todo" placeholder="What needs to be done?" autofocus>
+			</header>
+			<section class="main">
+				<input class="toggle-all" type="checkbox">
+				<label for="toggle-all">Mark all as complete</label>
+				<ul class="todo-list">
+					<li class="not-found">
+						<div class="view">
+						    <label class="not-found">등록된 TODO가 없습니다.</label>
+						</div>
+					</li>
+					<script id="todo-template" type="text/x-handlebars-template">
+						{{#each todos}}
+							{{> todoList tagName="li" }}
+						{{/each}}
+					</script>
+				</ul>
+			</section>
+			<footer class="footer">
+				<span class="todo-count"><strong>0</strong> item left</span>
+				<ul class="filters">
+					<li>
+						<a class="selected" href="#/all">All</a>
+					</li>
+					<li>
+						<a href="#/active">Active</a>
+					</li>
+					<li>
+						<a href="#/completed">Completed</a>
+					</li>
+				</ul>
+				<button class="clear-completed">Clear completed</button>
+				<div class="pagebar">
+				</div>
+			</footer>
+		</section>
+		<footer class="info">
+			<p>Double-click to edit a todo</p>
+		</footer>
+		<script src="bower_components/requirejs/require.js"></script>
+		<script>
+			require.config({
+				baseUrl: "./js",
+				paths : {
+					'jquery':'../bower_components/jquery/dist/jquery',
+					'handlebars':'../bower_components/handlebars/handlebars',
+					'eventemitter':'../bower_components/eventemitter/src/EventEmitter'
+				}
+			});
+			require([
+					'app',
+					'statusTodo'
+			],function(TODO, TODOStatus){
+				TODO.init();
+				TODOStatus.init();
+			})
+
+		</script>
+	</body>
+</html>
