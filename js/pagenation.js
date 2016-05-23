@@ -31,7 +31,7 @@ define(['jquery','eventemitter'],function($, EventEmitter){
 				pageButtons.push(button);
 			}
 			pageButtons.push($('<a href="#">&gt;</a>')[(this.nowPage == this.maxPage)?'addClass':'removeClass']('disabled'));
-			pageButtons.push($('<a href="#">&gt;&gt;</a>')[(this.nowPage >= this.maxPage - this.limit)?'addClass':'removeClass']('disabled'));
+			pageButtons.push($('<a href="#">&gt;&gt;</a>')[(this.nowPage > this.maxPage - this.limit)?'addClass':'removeClass']('disabled'));
 			
 			this.ele.append(pageButtons);
 		},
@@ -51,7 +51,7 @@ define(['jquery','eventemitter'],function($, EventEmitter){
 				this.nowPage -= this.limit;
 				page = this.nowPage;
 			}else if(page == '>>'){
-				this.nowPage += this.limit;
+				this.nowPage = this.nowPage*1 + this.limit;
 				page = this.nowPage;
 			}else{
 				this.nowPage = page;
